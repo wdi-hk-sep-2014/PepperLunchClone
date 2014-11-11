@@ -1,4 +1,4 @@
 PepperLunchClone
 ================
 
-A clone of PepperLunch
+Ashton's clone of PepperLunch
