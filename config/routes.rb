@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :lunches
+  scope :api do
+    resources :lunches, only: [:index, :show, :create]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
