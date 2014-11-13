@@ -14,9 +14,7 @@
  *= require_self
  */
 
-body {
-  padding-top: 50px;
-}
+
 
 [class*="col-"] {
   padding-top: 15px;
