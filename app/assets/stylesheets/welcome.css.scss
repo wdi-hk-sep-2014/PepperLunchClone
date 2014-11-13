@@ -10,15 +10,20 @@ body {
 
 .timetable {
   .week {
+    div {
+      padding: 5px;
+    }
+
     .number {
+      line-height: 30px;
       text-align: right;
     }
 
     .day {
-      padding: 5px;
+      text-align: center;
 
       div {
-        width: 100px;
+        width: 80%;
         height: 30px;
       }
     }
