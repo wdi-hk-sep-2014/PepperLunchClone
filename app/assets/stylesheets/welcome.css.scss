@@ -1,0 +1,35 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$nav-top: 50px;
+$color: pink;
+$background-color: pink;
+$border: none;
+
+body {
+  padding-top: $nav-top;
+}
+
+.timetable {
+  border: $border;
+  .week {
+    border: $border;
+    .number {
+      text-align: right;
+    }
+    .day {
+      border: $border;
+      padding: 5px;
+      div {
+        width: 100px;
+        height: 50px;
+      }
+      .btn {
+        background-color: $background-color;
+        border: $border;
+      }
+    }
+  }
+}
+
