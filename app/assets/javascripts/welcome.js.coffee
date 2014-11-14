@@ -5,8 +5,27 @@
 App = angular.module("myApp", [])
 
 App.controller("TimetableCtrl",["$scope", ($scope) ->
+  $scope.weeks = []
   $scope.lunchCount = 0
-  $scope.increment = ->
-    $scope.lunchCount++
-  ])
+
+  $scope.init = ->
+    for i in [1..13]
+      $scope.weeks.push [0, 0, 0, 0, 0]
+
+  $scope.increment = (week, day)->
+    if $scope.weeks[week][day] == 0
+      $scope.weeks[week][day] = 1 #this changes the state of the array to 1
+      $scope.lunchCount++
+    else
+      $scope.weeks[week][day] = 0
+      $scope.lunchCount--
+
+  $scope.getClass = (day) ->
+    if day == 0
+      "btn-success"
+    else
+      "btn-danger"
+
+  $scope.init()
+])
 
