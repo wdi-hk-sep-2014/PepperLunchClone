@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   scope :api do
-    resources :lunches, only: [:index, :show, :create]
+    resources :lunches, only: [:index, :show, :create] do
+      post 'submit' , on: :collection
+      get 'data' , on: :collection
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,6 +1,12 @@
 class LunchesController < ApplicationController
   before_action :set_lunch, only: [:show, :edit, :update, :destroy]
 
+  def submit
+  end
+
+  def data
+  end
+
   # GET /lunches
   # GET /lunches.json
   def index
