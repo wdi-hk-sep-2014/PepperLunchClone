@@ -1,0 +1,31 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$nav-top: 50px;
+
+body {
+  padding-top: $nav-top;
+}
+
+.timetable {
+  .week {
+    div {
+      padding: 5px;
+    }
+
+    .number {
+      line-height: 30px;
+      text-align: right;
+    }
+
+    .day {
+      text-align: center;
+
+      div {
+        width: 80%;
+        height: 30px;
+      }
+    }
+  }
+}
