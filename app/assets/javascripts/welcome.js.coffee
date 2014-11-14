@@ -3,3 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 App = angular.module("myApp", [])
+
+App.controller("TimetableCtrl", ["$scope", ($scope) ->
+  $scope.lunchCount = 0
+
+  $scope.increment = ->
+    $scope.lunchCount++
+])
