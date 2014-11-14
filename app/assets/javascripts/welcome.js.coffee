@@ -2,9 +2,10 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+
 App = angular.module("myApp", [])
 
-App.controller("TimetableCtrl",["$scope", ($scope) ->
+App.controller("TimetableCtrl",["$scope", "$http", ($scope, $http) ->
   $scope.weeks = []
   $scope.lunchCount = 0
 
@@ -25,6 +26,14 @@ App.controller("TimetableCtrl",["$scope", ($scope) ->
       "btn-success"
     else
       "btn-danger"
+
+  $scope.submitCount = ->
+    jsonObj = {"data": $scope.weeks}
+    $http.post("/api/lunches/submit.json", jsonObj)
+      .success (data) ->
+        console.log data
+      .error (data) ->
+        console.log data
 
   $scope.init()
 ])

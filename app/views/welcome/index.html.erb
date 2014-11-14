@@ -4,6 +4,9 @@
 <div class="timetable" ng-controller="TimetableCtrl">
 <h2>You have taken {{ lunchCount }} times of PepperLunch</h2>
 <!-- <div class="btn btn-success" ng-click="increment()">+1</div> -->
+  <div class="row">
+    <div class="row col-md-2 col-md-offset-5 btn btn-success" ng-click="submitCount()">Save</div>
+  </div>
   <div class="row week" ng-repeat="week in weeks">
     <div class="col-md-2 number">Week {{ $index + 1 }}</div>
     <div class="col-md-2 day" ng-repeat="day in week track by $index">
