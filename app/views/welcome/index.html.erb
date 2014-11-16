@@ -1,6 +1,9 @@
 <h1>Welcome to PepperLunch Tracker</h1>
 
-<div class="timetable">
+<div class="timetable" ng-controller="TimetableCtrl">
+  <h2>You have taken {{ lunchCount }} times of PepperLunch</h2>
+  <div class="btn btn-success" ng-click="increment()">+1</div>
+
   <div class="row week">
     <div class="col-md-2 number">Week 1</div>
     <div class="col-md-2 day">
