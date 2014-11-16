@@ -9,6 +9,12 @@ body {
 }
 
 .timetable {
+  .header {
+    div {
+      text-align: center;
+    }
+  }
+
   .week {
     div {
       padding: 5px;
@@ -16,7 +22,6 @@ body {
 
     .number {
       line-height: 30px;
-      text-align: right;
     }
 
     .day {
