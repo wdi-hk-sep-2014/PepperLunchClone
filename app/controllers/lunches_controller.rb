@@ -14,6 +14,7 @@ class LunchesController < ApplicationController
         end
       end
     end
+    render status: :created
   end
 
   def data
