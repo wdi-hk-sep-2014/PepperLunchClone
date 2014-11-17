@@ -2,7 +2,16 @@ class LunchesController < ApplicationController
   before_action :set_lunch, only: [:show, :edit, :update, :destroy]
 
   def submit
-
+    data = params[:data]
+    data.each_with_index do |row, row_index|
+      row.each_with_index do |value, index|
+        if value == 1
+          date = Lunch.start_of_wdi + row_index.week + index
+          # Lunch.create lunch_date: date
+          puts ">>> Date: " + date.to_s
+        end
+      end
+    end
   end
 
   def data
