@@ -3,7 +3,8 @@
 <div class="timetable" ng-controller="TimetableCtrl">
   <h2 class="text-center">You have taken {{ lunchCount }} times of PepperLunch</h2>
   <div class="row">
-    <div class="col-md-2 col-md-offset-5 btn btn-success" ng-click="submitCount()">Save</div>
+    <div class="col-md-2 col-md-offset-5 btn btn-success" ng-click="submitCount()" ng-if="!saved">Save</div>
+    <div class="alert alert-success text-center" ng-if="saved">Saved!</div>
   </div>
 
   <div class="row header">
