@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'angularjs-rails', '~> 1.3'
 
+gem 'devise'
+
 group :development do
   # Spring speeds up development by keeping your application running in the background.
   #> https://github.com/rails/spring
