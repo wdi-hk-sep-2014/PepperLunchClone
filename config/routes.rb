@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+
   scope :api do
     resources :lunches, only: [:index, :show, :create] do
       post  'submit'  , on: :collection
