@@ -2,7 +2,7 @@ class LunchesController < ApplicationController
   before_action :set_lunch, only: [:show, :edit, :update, :destroy]
 
   def submit
-    Lunch.destroy_all
+    Lunch.destroy_all user: current_user
 
     data = params[:data]
     data.each_with_index do |row, row_index|
@@ -10,7 +10,7 @@ class LunchesController < ApplicationController
 
         if value == 1
           date = Lunch.start_of_wdi + row_index.week + index
-          Lunch.create lunch_date: date
+          Lunch.create lunch_date: date, user: current_user
         end
       end
     end
