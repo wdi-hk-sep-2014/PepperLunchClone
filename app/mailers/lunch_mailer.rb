@@ -1,14 +1,9 @@
 class LunchMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "chefs@pepperlunch.com"
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.lunch_mailer.data_update_notification.subject
-  #
   def data_update_notification
-    @greeting = "Hi"
+    @greeting = "WHY HELLO THERE VALUED CUSTOMER!"
 
-    mail to: "to@example.org"
+    mail to: "mark.wilson@generalassemb.ly"
   end
 end
