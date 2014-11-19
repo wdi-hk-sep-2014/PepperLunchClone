@@ -1,9 +1,12 @@
-LunchMailer#data_update_notification
-
-<%= @greeting %>, find me in app/views/lunch_mailer/data_update_notification.text.erb
+<h1>Lunch tracking update notification</h1>
 
 Thank you for your continued patronage of Pepper Lunch!
 
 We have received your lunch tracking update!
 
 You've eaten lunch at Pepper Lunch <%= @lunch_count %> times! Wow!
+
+We are so glad you joined us on the following dates:
+<% @lunch_dates.each do |lunch_date| %>
+* <%= lunch_date %>
+<% end %>

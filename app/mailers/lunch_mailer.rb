@@ -2,9 +2,8 @@ class LunchMailer < ActionMailer::Base
   default from: "chefs@pepperlunch.com"
 
   def data_update_notification(user)
-    @greeting = "WHY HELLO THERE"
-
     @lunch_count = user.lunches.count
+    @lunch_dates = user.lunches.pluck(:lunch_date)
 
     mail to: user.email, subject: "Lunch tracking update!"
   end
