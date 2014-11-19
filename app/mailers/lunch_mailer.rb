@@ -6,6 +6,6 @@ class LunchMailer < ActionMailer::Base
 
     @lunch_count = user.lunches.count
 
-    mail to: user.email
+    mail to: user.email, subject: "Lunch tracking update!"
   end
 end
