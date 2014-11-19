@@ -70,3 +70,4 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem "letter_opener", :group => :development
