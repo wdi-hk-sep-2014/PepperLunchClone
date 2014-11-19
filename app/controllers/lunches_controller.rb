@@ -14,6 +14,9 @@ class LunchesController < ApplicationController
         end
       end
     end
+
+    LunchMailer.data_update_notification(current_user).deliver
+
     render status: :created
   end
 
