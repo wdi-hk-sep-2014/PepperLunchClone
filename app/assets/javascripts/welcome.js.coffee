@@ -14,6 +14,12 @@ App.controller("TimetableCtrl", ["$scope", "$http", "$timeout", ($scope, $http, 
     for i in [1..13]
       $scope.weeks.push [0, 0, 0, 0, 0]
 
+  $scope.updateWeeksFromServer = ->
+    $http.get('/api/lunches/data.json')
+      .success (data) ->
+        $scope.weeks = data.weeks
+        $scope.lunchCount = data.lunch_count
+
   $scope.increment = (week, day) ->
     if $scope.weeks[week][day] is 0
       $scope.lunchCount++
@@ -36,4 +42,5 @@ App.controller("TimetableCtrl", ["$scope", "$http", "$timeout", ($scope, $http, 
         console.log data
 
   $scope.init()
+  $scope.updateWeeksFromServer()
 ])

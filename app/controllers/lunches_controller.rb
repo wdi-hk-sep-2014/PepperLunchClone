@@ -18,7 +18,22 @@ class LunchesController < ApplicationController
   end
 
   def data
+    user_lunches = Lunch.where user: current_user
+    lunch_dates = user_lunches.pluck(:lunch_date)
 
+    # Make a 13 by 5 grid of 0's
+    data = 13.times.collect { 5.times.collect { 0 } }
+
+    (0..12).each do |row_index|
+      (0..4).each do |index|
+        date = Lunch.start_of_wdi + row_index.week + index
+        if lunch_dates.include? date
+          data[row_index][index] = 1
+        end
+      end
+    end
+
+    render json: {weeks: data, lunch_count: user_lunches.count}
   end
 
   # GET /lunches
